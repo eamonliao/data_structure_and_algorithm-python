@@ -1,43 +1,33 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@font-face {
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
   font-family: octicons-anchor;
-  src: url(https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.woff) format('woff');
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    width: 980px;
-    margin-right: auto;
-    margin-left: auto;
-    color:#333;
-    background:#fff;
-}
-
-body .markdown-body {
-    padding: 45px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    word-wrap: break-word;
-}
-
-pre {
-    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
 }
 
 .markdown-body {
+  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
   color: #333;
-  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   word-wrap: break-word;
 }
 
 .markdown-body a {
-  background-color: transparent;
+  background: transparent;
 }
 
 .markdown-body a:active,
@@ -59,6 +49,7 @@ pre {
 }
 
 .markdown-body hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -89,6 +80,7 @@ pre {
 }
 
 .markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
 }
@@ -103,16 +95,22 @@ pre {
   padding: 0;
 }
 
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .markdown-body input {
-  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .markdown-body a {
-  color: #4078c0;
+  color: #4183c4;
   text-decoration: none;
 }
 
 .markdown-body a:hover,
+.markdown-body a:focus,
 .markdown-body a:active {
   text-decoration: underline;
 }
@@ -200,8 +198,7 @@ pre {
 }
 
 .markdown-body code {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 12px;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 .markdown-body pre {
@@ -210,15 +207,11 @@ pre {
   font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
-.markdown-body .select::-ms-expand {
-  opacity: 0;
-}
-
 .markdown-body .octicon {
-  font: normal normal normal 16px/1 octicons-anchor;
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
   display: inline-block;
   text-decoration: none;
-  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-user-select: none;
@@ -231,17 +224,6 @@ pre {
   content: '\f05c';
 }
 
-.markdown-body:before {
-  display: table;
-  content: "";
-}
-
-.markdown-body:after {
-  display: table;
-  clear: both;
-  content: "";
-}
-
 .markdown-body>*:first-child {
   margin-top: 0 !important;
 }
@@ -250,15 +232,15 @@ pre {
   margin-bottom: 0 !important;
 }
 
-.markdown-body a:not([href]) {
-  color: inherit;
-  text-decoration: none;
-}
-
 .markdown-body .anchor {
-  display: inline-block;
-  padding-right: 2px;
-  margin-left: -18px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
 }
 
 .markdown-body .anchor:focus {
@@ -271,6 +253,7 @@ pre {
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
+  position: relative;
   margin-top: 1em;
   margin-bottom: 16px;
   font-weight: bold;
@@ -283,9 +266,9 @@ pre {
 .markdown-body h4 .octicon-link,
 .markdown-body h5 .octicon-link,
 .markdown-body h6 .octicon-link {
+  display: none;
   color: #000;
   vertical-align: middle;
-  visibility: hidden;
 }
 
 .markdown-body h1:hover .anchor,
@@ -294,6 +277,9 @@ pre {
 .markdown-body h4:hover .anchor,
 .markdown-body h5:hover .anchor,
 .markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
   text-decoration: none;
 }
 
@@ -303,7 +289,7 @@ pre {
 .markdown-body h4:hover .anchor .octicon-link,
 .markdown-body h5:hover .anchor .octicon-link,
 .markdown-body h6:hover .anchor .octicon-link {
-  visibility: visible;
+  display: inline-block;
 }
 
 .markdown-body h1 {
@@ -313,10 +299,6 @@ pre {
   border-bottom: 1px solid #eee;
 }
 
-.markdown-body h1 .anchor {
-  line-height: 1;
-}
-
 .markdown-body h2 {
   padding-bottom: 0.3em;
   font-size: 1.75em;
@@ -324,42 +306,22 @@ pre {
   border-bottom: 1px solid #eee;
 }
 
-.markdown-body h2 .anchor {
-  line-height: 1;
-}
-
 .markdown-body h3 {
   font-size: 1.5em;
   line-height: 1.43;
-}
-
-.markdown-body h3 .anchor {
-  line-height: 1.2;
 }
 
 .markdown-body h4 {
   font-size: 1.25em;
 }
 
-.markdown-body h4 .anchor {
-  line-height: 1.2;
-}
-
 .markdown-body h5 {
   font-size: 1em;
-}
-
-.markdown-body h5 .anchor {
-  line-height: 1.1;
 }
 
 .markdown-body h6 {
   font-size: 1em;
   color: #777;
-}
-
-.markdown-body h6 .anchor {
-  line-height: 1.1;
 }
 
 .markdown-body p,
@@ -458,8 +420,8 @@ pre {
 
 .markdown-body img {
   max-width: 100%;
-  box-sizing: content-box;
-  background-color: #fff;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .markdown-body code {
@@ -528,136 +490,362 @@ pre {
   content: normal;
 }
 
-.markdown-body kbd {
-  display: inline-block;
-  padding: 3px 5px;
-  font-size: 11px;
-  line-height: 10px;
-  color: #555;
-  vertical-align: middle;
-  background-color: #fcfcfc;
-  border: solid 1px #ccc;
-  border-bottom-color: #bbb;
-  border-radius: 3px;
-  box-shadow: inset 0 -1px 0 #bbb;
+.markdown-body .highlight {
+  background: #fff;
 }
 
-.markdown-body .pl-c {
-  color: #969896;
-}
-
-.markdown-body .pl-c1,
-.markdown-body .pl-s .pl-v {
-  color: #0086b3;
-}
-
-.markdown-body .pl-e,
-.markdown-body .pl-en {
-  color: #795da3;
-}
-
-.markdown-body .pl-s .pl-s1,
-.markdown-body .pl-smi {
+.markdown-body .highlight .h {
   color: #333;
+  font-style: normal;
+  font-weight: normal;
 }
 
-.markdown-body .pl-ent {
-  color: #63a35c;
+.markdown-body .highlight .mf,
+.markdown-body .highlight .mh,
+.markdown-body .highlight .mi,
+.markdown-body .highlight .mo,
+.markdown-body .highlight .il,
+.markdown-body .highlight .m {
+  color: #945277;
 }
 
-.markdown-body .pl-k {
-  color: #a71d5d;
+.markdown-body .highlight .s,
+.markdown-body .highlight .sb,
+.markdown-body .highlight .sc,
+.markdown-body .highlight .sd,
+.markdown-body .highlight .s2,
+.markdown-body .highlight .se,
+.markdown-body .highlight .sh,
+.markdown-body .highlight .si,
+.markdown-body .highlight .sx,
+.markdown-body .highlight .s1 {
+  color: #df5000;
 }
 
-.markdown-body .pl-pds,
-.markdown-body .pl-s,
-.markdown-body .pl-s .pl-pse .pl-s1,
-.markdown-body .pl-sr,
-.markdown-body .pl-sr .pl-cce,
-.markdown-body .pl-sr .pl-sra,
-.markdown-body .pl-sr .pl-sre {
-  color: #183691;
-}
-
-.markdown-body .pl-v {
-  color: #ed6a43;
-}
-
-.markdown-body .pl-id {
-  color: #b52a1d;
-}
-
-.markdown-body .pl-ii {
-  background-color: #b52a1d;
-  color: #f8f8f8;
-}
-
-.markdown-body .pl-sr .pl-cce {
-  color: #63a35c;
+.markdown-body .highlight .kc,
+.markdown-body .highlight .kd,
+.markdown-body .highlight .kn,
+.markdown-body .highlight .kp,
+.markdown-body .highlight .kr,
+.markdown-body .highlight .kt,
+.markdown-body .highlight .k,
+.markdown-body .highlight .o {
   font-weight: bold;
 }
 
-.markdown-body .pl-ml {
-  color: #693a17;
+.markdown-body .highlight .kt {
+  color: #458;
 }
 
-.markdown-body .pl-mh,
-.markdown-body .pl-mh .pl-en,
-.markdown-body .pl-ms {
-  color: #1d3e81;
-  font-weight: bold;
-}
-
-.markdown-body .pl-mq {
-  color: #008080;
-}
-
-.markdown-body .pl-mi {
-  color: #333;
+.markdown-body .highlight .c,
+.markdown-body .highlight .cm,
+.markdown-body .highlight .c1 {
+  color: #998;
   font-style: italic;
 }
 
-.markdown-body .pl-mb {
+.markdown-body .highlight .cp,
+.markdown-body .highlight .cs,
+.markdown-body .highlight .cp .h {
+  color: #999;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .cs {
+  font-style: italic;
+}
+
+.markdown-body .highlight .n {
   color: #333;
+}
+
+.markdown-body .highlight .na,
+.markdown-body .highlight .nv,
+.markdown-body .highlight .vc,
+.markdown-body .highlight .vg,
+.markdown-body .highlight .vi {
+  color: #008080;
+}
+
+.markdown-body .highlight .nb {
+  color: #0086B3;
+}
+
+.markdown-body .highlight .nc {
+  color: #458;
   font-weight: bold;
 }
 
-.markdown-body .pl-md {
-  background-color: #ffecec;
-  color: #bd2c00;
+.markdown-body .highlight .no {
+  color: #094e99;
 }
 
-.markdown-body .pl-mi1 {
-  background-color: #eaffea;
-  color: #55a532;
+.markdown-body .highlight .ni {
+  color: #800080;
 }
 
-.markdown-body .pl-mdr {
-  color: #795da3;
+.markdown-body .highlight .ne {
+  color: #990000;
   font-weight: bold;
 }
 
-.markdown-body .pl-mo {
-  color: #1d3e81;
+.markdown-body .highlight .nf {
+  color: #945277;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nn {
+  color: #555;
+}
+
+.markdown-body .highlight .nt {
+  color: #000080;
+}
+
+.markdown-body .highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+
+.markdown-body .highlight .gd {
+  color: #000;
+  background-color: #fdd;
+}
+
+.markdown-body .highlight .gd .x {
+  color: #000;
+  background-color: #faa;
+}
+
+.markdown-body .highlight .ge {
+  font-style: italic;
+}
+
+.markdown-body .highlight .gr {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .gh {
+  color: #999;
+}
+
+.markdown-body .highlight .gi {
+  color: #000;
+  background-color: #dfd;
+}
+
+.markdown-body .highlight .gi .x {
+  color: #000;
+  background-color: #afa;
+}
+
+.markdown-body .highlight .go {
+  color: #888;
+}
+
+.markdown-body .highlight .gp {
+  color: #555;
+}
+
+.markdown-body .highlight .gs {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gu {
+  color: #800080;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gt {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .ow {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .w {
+  color: #bbb;
+}
+
+.markdown-body .highlight .sr {
+  color: #017936;
+}
+
+.markdown-body .highlight .ss {
+  color: #8b467f;
+}
+
+.markdown-body .highlight .bp {
+  color: #999;
+}
+
+.markdown-body .highlight .gc {
+  color: #999;
+  background-color: #EAF2F5;
 }
 
 .markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
   display: inline-block;
   padding: 3px 5px;
   font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
   line-height: 10px;
-  color: #555;
-  vertical-align: middle;
-  background-color: #fcfcfc;
-  border: solid 1px #ccc;
-  border-bottom-color: #bbb;
-  border-radius: 3px;
-  box-shadow: inset 0 -1px 0 #bbb;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
 }
 
-.markdown-body .plan-price-unit {
-  color: #767676;
-  font-weight: normal;
+.markdown-body .highlight .pl-coc,
+.markdown-body .highlight .pl-entm,
+.markdown-body .highlight .pl-eoa,
+.markdown-body .highlight .pl-mai .pl-sf,
+.markdown-body .highlight .pl-pdv,
+.markdown-body .highlight .pl-sc,
+.markdown-body .highlight .pl-sr,
+.markdown-body .highlight .pl-v,
+.markdown-body .highlight .pl-vpf {
+  color: #0086b3;
+}
+
+.markdown-body .highlight .pl-eoac,
+.markdown-body .highlight .pl-mdht,
+.markdown-body .highlight .pl-mi1,
+.markdown-body .highlight .pl-mri,
+.markdown-body .highlight .pl-va,
+.markdown-body .highlight .pl-vpu {
+  color: #008080;
+}
+
+.markdown-body .highlight .pl-c,
+.markdown-body .highlight .pl-pdc {
+  color: #b4b7b4;
+  font-style: italic;
+}
+
+.markdown-body .highlight .pl-k,
+.markdown-body .highlight .pl-ko,
+.markdown-body .highlight .pl-kolp,
+.markdown-body .highlight .pl-mc,
+.markdown-body .highlight .pl-mr,
+.markdown-body .highlight .pl-ms,
+.markdown-body .highlight .pl-s,
+.markdown-body .highlight .pl-sok,
+.markdown-body .highlight .pl-st {
+  color: #6e5494;
+}
+
+.markdown-body .highlight .pl-ef,
+.markdown-body .highlight .pl-enf,
+.markdown-body .highlight .pl-enm,
+.markdown-body .highlight .pl-entc,
+.markdown-body .highlight .pl-eoi,
+.markdown-body .highlight .pl-sf,
+.markdown-body .highlight .pl-smc {
+  color: #d12089;
+}
+
+.markdown-body .highlight .pl-ens,
+.markdown-body .highlight .pl-eoai,
+.markdown-body .highlight .pl-kos,
+.markdown-body .highlight .pl-mh .pl-pdh,
+.markdown-body .highlight .pl-mp,
+.markdown-body .highlight .pl-pde,
+.markdown-body .highlight .pl-stp {
+  color: #458;
+}
+
+.markdown-body .highlight .pl-enti {
+  color: #d12089;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-cce,
+.markdown-body .highlight .pl-enc,
+.markdown-body .highlight .pl-kou,
+.markdown-body .highlight .pl-mq {
+  color: #f93;
+}
+
+.markdown-body .highlight .pl-mp1 .pl-sf {
+  color: #458;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-cos,
+.markdown-body .highlight .pl-ent,
+.markdown-body .highlight .pl-md,
+.markdown-body .highlight .pl-mdhf,
+.markdown-body .highlight .pl-ml,
+.markdown-body .highlight .pl-pdc1,
+.markdown-body .highlight .pl-pds,
+.markdown-body .highlight .pl-s1,
+.markdown-body .highlight .pl-scp,
+.markdown-body .highlight .pl-sol {
+  color: #df5000;
+}
+
+.markdown-body .highlight .pl-c1,
+.markdown-body .highlight .pl-cn,
+.markdown-body .highlight .pl-pse,
+.markdown-body .highlight .pl-pse .pl-s2,
+.markdown-body .highlight .pl-vi {
+  color: #a31515;
+}
+
+.markdown-body .highlight .pl-mb,
+.markdown-body .highlight .pl-pdb {
+  color: #df5000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-mi,
+.markdown-body .highlight .pl-pdi {
+  color: #6e5494;
+  font-style: italic;
+}
+
+.markdown-body .highlight .pl-ms1 {
+  background-color: #f5f5f5;
+}
+
+.markdown-body .highlight .pl-mdh,
+.markdown-body .highlight .pl-mdi {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-mdr {
+  color: #0086b3;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-s2 {
+  color: #333;
+}
+
+.markdown-body .highlight .pl-ii {
+  background-color: #df5000;
+  color: #fff;
+}
+
+.markdown-body .highlight .pl-ib {
+  background-color: #f93;
+}
+
+.markdown-body .highlight .pl-id {
+  background-color: #a31515;
+  color: #fff;
+}
+
+.markdown-body .highlight .pl-iu {
+  background-color: #b4b7b4;
+}
+
+.markdown-body .highlight .pl-mo {
+  color: #969896;
 }
 
 .markdown-body .task-list-item {
@@ -669,69 +857,111 @@ pre {
 }
 
 .markdown-body .task-list-item input {
-  margin: 0 0.35em 0.25em -1.6em;
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
   vertical-align: middle;
-}
-
-.markdown-body .plan-choice {
-  padding: 15px;
-  padding-left: 40px;
-  display: block;
-  border: 1px solid #e0e0e0;
-  position: relative;
-  font-weight: normal;
-  background-color: #fafafa;
-}
-
-.markdown-body .plan-choice.open {
-  background-color: #fff;
-}
-
-.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
-  display: block;
-}
-
-.markdown-body .plan-choice-free {
-  border-radius: 3px 3px 0 0;
-}
-
-.markdown-body .plan-choice-paid {
-  border-radius: 0 0 3px 3px;
-  border-top: 0;
-  margin-bottom: 20px;
-}
-
-.markdown-body .plan-choice-radio {
-  position: absolute;
-  left: 15px;
-  top: 18px;
-}
-
-.markdown-body .plan-choice-exp {
-  color: #999;
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-.markdown-body .plan-choice-seat-breakdown {
-  margin-top: 10px;
-  display: none;
-}
-
-.markdown-body :checked+.radio-label {
-  z-index: 1;
-  position: relative;
-  border-color: #4078c0;
-}
-
-@media print {
-  body .markdown-body {
-    padding: 0;
-    border: none;
-  }
-}
-</style><title>01.数据结构.00.数据结构基础知识</title></head><body><article class="markdown-body"><h1>
+}</style><title>01.数据结构.00.数据结构基础知识</title></head><body><article class="markdown-body"><h1>
 <a id="user-content-01数据结构" class="anchor" href="#01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>01.数据结构</h1>
 <h2>
 <a id="user-content-00数据结构基础知识" class="anchor" href="#00%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>00.数据结构基础知识</h2>
+<ol>
+<li>
+<p><strong>数据</strong>：是对现实世界的事物采用计算机能够识别，储存和处理的形式进行描述的符号的集合。</p>
+</li>
+<li>
+<p><strong>数据元素</strong>：是数据的基本单位。在计算机中通常作为整理处理。也被称为记录。</p>
+</li>
+<li>
+<p><strong>数据项</strong>：一个数据可以由若干个数据项组成。数据项包括两种：一种是初等数据项，是数据不可分割的最小单位。另一种是组合项，由若干个数据项组成。</p>
+</li>
+<li>
+<p><strong>数据对象</strong>：是性质相同数据元素的集合，是数据集合的一个子集。</p>
+</li>
+<li>
+<p><strong>数据结构</strong>：在任何数据对象中，数据元素都不是孤立存在的，他们相互之间存在一种或者多种特定的关系，这种关系称为结构。</p>
+</li>
+</ol>
+<h3>
+<a id="user-content-数据结构的分类" class="anchor" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%88%86%E7%B1%BB" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>数据结构的分类</h3>
+<p>数据结构包含数据的逻辑结构和物理结构</p>
+<h4>
+<a id="user-content-一逻辑结构" class="anchor" href="#%E4%B8%80%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>一、逻辑结构</h4>
+<p><strong>逻辑结构</strong>：是指数据对象中数据元素之间的相互关系。</p>
+<p>数据的逻辑结构可分为两大类：一类是线性结构；另一类是非性结构。</p>
+<ul>
+<li>线性结构：有且仅有一个开始结点和一个终端结点，并且所有的结点最多只有一个前驱和后继。线性表是典型的线性结构。</li>
+<li>非线性结构：非线性结构的结点可能有多个前驱和后继。</li>
+<li>
+<ol>
+<li>树形结构：一个结点最多只有一个前驱，而可以有多个后继，这种结构就是树。树是最重要的非线性结构之一。</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>图形结构：对结点的前驱和后继的个数不作限制，这种结构就是图。图是最一般的非线性结构。</li>
+</ol>
+</li>
+</ul>
+<p>逻辑结构是针对具体问题的，是为了解决某个问题，在对问题理解的基础上，选择一个合适的数据结构表示数据元素之间的逻辑关系。</p>
+<h4>
+<a id="user-content-二物理结构" class="anchor" href="#%E4%BA%8C%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>二、物理结构</h4>
+<p>数据的物理结构（也叫存储结构），是指数据的逻辑结构在计算机中的存储形式。有四种基本的存储方式：<strong>顺序存储</strong>，<strong>链式存储</strong>，<strong>索引存储</strong>和<strong>散列存储</strong>。</p>
+<h5>
+<a id="user-content-1顺序存储" class="anchor" href="#1%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.顺序存储</h5>
+<p>在计算机中用一组地址连续的存储单元依次存储线性表的各个数据元素,称作线性表的顺序存储结构。
+特点：</p>
+<ol>
+<li>随机存取表中元素。</li>
+<li>插入和删除操作需要移动元素。</li>
+</ol>
+<h5>
+<a id="user-content-2链式存储" class="anchor" href="#2%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.链式存储</h5>
+<p>在计算机中用一组任意的存储单元存储线性表的数据元素(这组存储单元可以是连续的,也可以是不连续的)。链式存储不要求逻辑上相邻的元素在物理位置上也相邻。因此它没有顺序存储结构所具有的弱点,但也同时失去了顺序表可随机存取的优点。
+特点：</p>
+<ol>
+<li>比顺序存储结构的存储密度小 (每个节点都由数据域和指针域组成，所以相同空间内假设全存满的话顺序比链式存储更多)。</li>
+<li>逻辑上相邻的节点物理上不必相邻。</li>
+<li>插入、删除灵活 (不必移动节点，只要改变节点中的指针)。</li>
+<li>查找结点时链式存储要比顺序存储慢。</li>
+<li>每个结点是由数据域和指针域组成。</li>
+</ol>
+<h5>
+<a id="user-content-3索引存储" class="anchor" href="#3%E7%B4%A2%E5%BC%95%E5%AD%98%E5%82%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.索引存储</h5>
+<p>除建立存储结点信息外，还建立附加的索引表来标识结点的地址。索引表由若干索引项组成。
+特点：</p>
+<ol>
+<li>索引存储结构是用结点的索引号来确定结点存储地址，其优点是检索速度快，缺点是增加了附加的索引表,会占用较多的存储空间。</li>
+</ol>
+<h5>
+<a id="user-content-4散列存储" class="anchor" href="#4%E6%95%A3%E5%88%97%E5%AD%98%E5%82%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.散列存储</h5>
+<p>散列存储，又称hash存储，是一种力图将数据元素的存储位置与关键码之间建立确定对应关系的查找技术。
+散列法存储的基本思想是：由节点的关键码值决定节点的存储地址。散列技术除了可以用于查找外，还可以用于存储。
+特点：</p>
+<ol>
+<li>散列是数组存储方式的一种发展，相比数组，散列的数据访问速度要高于数组，因为可以依据存储数据的部分内容找到数据在数组中的存储位置，进而能够快速实现数据的访问，理想的散列访问速度是非常迅速的，而不像在数组中的遍历过程，采用存储数组中内容的部分元素作为映射函数的输入，映射函数的输出就是存储数据的位置，这样的访问速度就省去了遍历数组的实现，因此时间复杂度可以认为为O(1)，而数组遍历的时间复杂度为O(n)。</li>
+</ol>
+<h3>
+<a id="user-content-抽象数据类型" class="anchor" href="#%E6%8A%BD%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>抽象数据类型</h3>
+<p><strong>数据类型</strong>：是指一组性质相同的值的集合及定义在此集合上的一些操作的总称。</p>
+<ul>
+<li>原子类型：是不可以再分解的基本类型，包括整型、实型、字符型等</li>
+<li>结构类型：由若干个类型组合而成，是可以再分解的。</li>
+</ul>
+<p><strong>抽象数据类型（Abstract Data Type，ADT）</strong>：是指一个数学模型及定义在该模型上的一组操作。</p>
+<p>抽象数据类型的定义仅取决于它的一组逻辑特性，而与其在计算机内部如何表示无关。“抽象”的意义在于数据类型的数学抽象特性。</p>
+<p><strong>抽象数据类型体现了程序设计中问题分解、抽象和信息隐藏的特性</strong></p>
+<p>ADT伪代码</p>
+<pre><code>ADT 抽象数据类型名
+Data
+	数据元素之间逻辑关系的定义
+Operation
+	操作1
+		初始条件
+		操作结果描述
+	操作2
+		……
+	操作n
+		……
+endADT
+</code></pre>
 </article></body></html>
